@@ -16,15 +16,15 @@ CUSTOM_DOMAIN = "latelan.xyz"
 
 [env.production]
 name = "cloudflare-docker-proxy"
-# routes = [
-#   { pattern = "docker.libcuda.so", custom_domain = true },
-#   { pattern = "quay.libcuda.so", custom_domain = true },
-#   { pattern = "gcr.libcuda.so", custom_domain = true },
-#   { pattern = "k8s-gcr.libcuda.so", custom_domain = true },
-#   { pattern = "k8s.libcuda.so", custom_domain = true },
-#   { pattern = "ghcr.libcuda.so", custom_domain = true },
-#   { pattern = "cloudsmith.libcuda.so", custom_domain = true },
-# ]
+routes = [
+  { pattern = "docker.latelan.xyz", custom_domain = true },
+  { pattern = "quay.latelan.xyz", custom_domain = true },
+  { pattern = "gcr.latelan.xyz", custom_domain = true },
+  { pattern = "k8s-gcr.latelan.xyz", custom_domain = true },
+  { pattern = "k8s.latelan.xyz", custom_domain = true },
+  { pattern = "ghcr.latelan.xyz", custom_domain = true },
+  { pattern = "cloudsmith.latelan.xyz", custom_domain = true },
+]
 
 [env.production.vars]
 MODE = "production"
