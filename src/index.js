@@ -1,4 +1,4 @@
-import DOCS from './help.html'
+import DOCS from "./help.html";
 
 addEventListener("fetch", (event) => {
   event.passThroughOnException();
@@ -42,7 +42,7 @@ async function handleRequest(request) {
       }),
       {
         status: 404,
-      }
+      },
     );
   }
   // return docs
@@ -50,8 +50,8 @@ async function handleRequest(request) {
     return new Response(DOCS, {
       status: 200,
       headers: {
-        "content-type": "text/html"
-      }
+        "content-type": "text/html",
+      },
     });
   }
   const isDockerHub = upstream == dockerHub;
@@ -165,16 +165,16 @@ async function fetchToken(wwwAuthenticate, scope, authorization) {
 }
 
 function responseUnauthorized(url) {
-  const headers = new(Headers);
+  const headers = new Headers();
   if (MODE == "debug") {
     headers.set(
       "Www-Authenticate",
-      `Bearer realm="http://${url.host}/v2/auth",service="cloudflare-docker-proxy"`
+      `Bearer realm="http://${url.host}/v2/auth",service="cloudflare-docker-proxy"`,
     );
   } else {
     headers.set(
       "Www-Authenticate",
-      `Bearer realm="https://${url.hostname}/v2/auth",service="cloudflare-docker-proxy"`
+      `Bearer realm="https://${url.hostname}/v2/auth",service="cloudflare-docker-proxy"`,
     );
   }
   return new Response(JSON.stringify({ message: "UNAUTHORIZED" }), {
